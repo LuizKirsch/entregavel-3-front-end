@@ -1,0 +1,61 @@
+/* Estilos Gerais para o Corpo (Se este for o componente principal/root) */
+body, #root > div {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh; /* Garante que o container ocupe a altura total da viewport */
+    display: flex;
+    flex-direction: column; /* Coloca header, main e footer em coluna */
+}
+
+/* Estilo para a Estrutura Principal (O <div> que envolve tudo) */
+#root > div { /* Se o seu HTML for diretamente o conteúdo do div */
+    /* Se você não usar o seletor 'body, #root > div',
+       certifique-se de que o elemento pai do header/main/footer tenha display: flex; flex-direction: column; */
+}
+
+/* Estilo do Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da Navegação (nav) */
+nav ul {
+    list-style: none; /* Remove os marcadores de lista */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Usa Flexbox para os itens da lista */
+    gap: 20px; /* Espaço entre os links */
+}
+
+/* Estilo dos Links */
+nav a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: white;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #f0f0f0;
+}
+
+/* Estilo do Main Content */
+main {
+    flex-grow: 1; /* Faz com que o 'main' ocupe todo o espaço restante */
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Estilo do Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}

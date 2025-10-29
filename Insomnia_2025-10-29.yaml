@@ -1,0 +1,188 @@
+type: collection.insomnia.rest/5.0
+name: My first collection
+meta:
+  id: wrk_bf0134fa77d4493b93a5087d01999379
+  created: 1761778185483
+  modified: 1761778185483
+  description: ""
+collection:
+  - url: "{{ _.base_url }}/tasks"
+    name: Get Tasks Kirsch
+    meta:
+      id: req_77c63484c3bc49abacf3f7bc1046e821
+      created: 1761778185522
+      modified: 1761780625455
+      isPrivate: false
+      description: ""
+      sortKey: -1761778185522
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters:
+      - id: pair_a3644dabf8884afc9c82ad1e3798cf6a
+        name: ""
+        value: ""
+        description: ""
+        disabled: false
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.6.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/tasks"
+    name: Add Tasks Kirsch
+    meta:
+      id: req_2916474a31d44a7ea5e5b4c49ce9940e
+      created: 1761778470745
+      modified: 1761780387251
+      isPrivate: false
+      description: ""
+      sortKey: -1761778470745
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"title": "Teste",
+        	"description": "descrição",
+        	"step": "Em andamento"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.6.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/tasks/8"
+    name: Get Task Kirsch
+    meta:
+      id: req_35466166f08b4bf0934224ab3ce6fb06
+      created: 1761780630422
+      modified: 1761780686208
+      isPrivate: false
+      description: ""
+      sortKey: -1761780630422
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/tasks/8"
+    name: Edit Task Kirsch
+    meta:
+      id: req_78bfbcfbf0c9491fa81762a26101bbcc
+      created: 1761780709196
+      modified: 1761780794698
+      isPrivate: false
+      description: ""
+      sortKey: -1761780709196
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Atualizar endpoints de tarefa",
+          "description": "Corrigir detalhes e revisar validações",
+          "step": "Em andamento"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.6.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/tasks/8/update-step"
+    name: Edit Step Kirsch
+    meta:
+      id: req_254f9ff3da8b4d2ca66e3f7383cc225f
+      created: 1761780743292
+      modified: 1761780806573
+      isPrivate: false
+      description: ""
+      sortKey: -1761780743292
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "step": "Pronto"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.6.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: "{{ _.base_url }}/tasks/8"
+    name: Delete Task Kirsch
+    meta:
+      id: req_c2e0506e85d04b7aaedb3a9cbe735487
+      created: 1761780770827
+      modified: 1761780818141
+      isPrivate: false
+      description: ""
+      sortKey: -1761780770827
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.6.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_beb6b65b2a4255108ab4391cb1b9a15c4b70b0e8
+    created: 1761778185485
+    modified: 1761778185485
+environments:
+  name: Base Environment
+  meta:
+    id: env_beb6b65b2a4255108ab4391cb1b9a15c4b70b0e8
+    created: 1761778185484
+    modified: 1761779747796
+    isPrivate: false
+  data:
+    base_url: https://pacaro-tarefas.netlify.app/api/kirsch
