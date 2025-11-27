@@ -1,13 +1,15 @@
 import TaskCard from './TaskCard';
 import type { Task } from '../App';
 
+import { COLUMNS } from '../api';
+
 type ColumnProps = {
-  col: { id: string; name: string; color: string; headerColor: string };
+  col: { id: keyof typeof COLUMNS; name: string; color: string; headerColor: string };
   tasks: Task[];
   onEdit: (task: Task) => void;
   onDelete: (id: string) => void;
   onDragStart: (id: string) => void;
-  onDrop: (e: React.DragEvent<HTMLDivElement>, newStatus: string) => void;
+  onDrop: (e: React.DragEvent<HTMLDivElement>, newStatus: keyof typeof COLUMNS) => void;
   onAdd?: () => void;
 };
 
