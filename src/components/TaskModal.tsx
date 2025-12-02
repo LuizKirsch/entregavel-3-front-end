@@ -58,7 +58,12 @@ const TaskModal = ({ taskToEdit, onSave, onClose }: TaskModalProps) => {
             value={description}
             onChange={e => setDescription(e.target.value)}
           />
-          <select className="w-full p-3 border rounded-lg" value={status} onChange={e => setStatus(e.target.value as keyof typeof COLUMNS)}>
+          <select 
+            className="w-full p-3 border rounded-lg" 
+            value={status} 
+            onChange={e => setStatus(e.target.value as keyof typeof COLUMNS)}
+            disabled={taskToEdit?.status === 'done'}
+          >
             {Object.values(COLUMNS).map(c => (
               <option key={c.id} value={c.id}>{c.name}</option>
             ))}

@@ -12,7 +12,10 @@ const TaskCard = ({ task, onEdit, onDelete, onDragStart }: TaskCardProps) => (
   <div
     className="p-4 mb-3 bg-white shadow rounded-xl cursor-pointer hover:shadow-lg"
     draggable
-    onDragStart={() => onDragStart(task.id)}
+    onDragStart={(e) => {
+      e.dataTransfer.setData('text/plain', task.id);
+      onDragStart(task.id);
+    }}
   >
     <div className="flex justify-between">
       <p onClick={() => onEdit(task)} className="font-semibold text-gray-800 cursor-pointer">

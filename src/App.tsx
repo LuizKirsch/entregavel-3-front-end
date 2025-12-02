@@ -73,6 +73,11 @@ export default function App() {
   const handleSaveTask = async (taskData: Partial<Task>) => {
     try {
       if (taskData.id) {
+        const originalTask = tasks.find(t => t.id === taskData.id);
+        if (originalTask?.status === 'done' && taskData.status !== 'done') {
+          showToast('Após finalizada não pode ser alterada o status', 'error');
+          return;
+        }
         const updated = await updateTaskApi(taskData as Partial<Task> & { id: string });
         setTasks(prev => prev.map(t => t.id === updated.id ? updated : t));
         showToast('Tarefa atualizada!', 'success');
@@ -138,15 +143,23 @@ export default function App() {
               key={col.id}
               col={col}
               tasks={tasks.filter(t => t.status === col.id)}
+              allTasks={tasks}
               onEdit={openModalForEdit}
               onDelete={handleDelete}
               onDragStart={setDraggingId}
               onDrop={handleDrop}
-              onAdd={col.id === 'todo' ? openModalForAdd : undefined}
+              onError={(msg) => showToast(msg, 'error')}
             />
           ))}
         </div>
       )}
+
+      <button
+        onClick={openModalForAdd}
+        className="fixed bottom-6 right-6 w-14 h-14 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 flex items-center justify-center text-2xl z-40"
+      >
+        +
+      </button>
 
       {isModalOpen && (
         <TaskModal
