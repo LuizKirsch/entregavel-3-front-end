@@ -122,23 +122,7 @@ export default function App() {
     setDraggingId(null);
   };
 
-  return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <div className="fixed top-5 right-5 z-50">
-        {toasts.map(t => (
-          <Toast key={t.id} {...t} onClose={closeToast} />
-        ))}
-      </div>
-
-        <Header></Header>
-
-      {loading ? (
-        <div className="flex justify-center mt-20">
-          <Loader className="animate-spin text-indigo-600" size={40} />
-        </div>
-      ) : (
-        <div className="flex flex-col md:flex-row gap-4">
-          {Object.values(COLUMNS).map(col => (
+  const columns = Object.values(COLUMNS).map(col => (
             <Column
               key={col.id}
               col={col}
@@ -150,7 +134,25 @@ export default function App() {
               onDrop={handleDrop}
               onError={(msg) => showToast(msg, 'error')}
             />
-          ))}
+          ));
+
+  return (
+    <div className="min-h-screen bg-gray-100 p-6">
+      <div className="fixed top-5 right-5 z-50">
+        {toasts.map(t => (
+          <Toast key={t.id} {...t} onClose={closeToast} />
+        ))}
+      </div>
+
+        <Header/>
+
+      {loading ? (
+        <div className="flex justify-center mt-20">
+          <Loader className="animate-spin text-indigo-600" size={40} />
+        </div>
+      ) : (
+        <div className="flex flex-col md:flex-row gap-4">
+          {columns}
         </div>
       )}
 

@@ -1,7 +1,11 @@
+const texts = {
+    footerText: "© 2024 Minha Aplicação. Todos os direitos reservados."
+}
+
 export default function Footer() {
     return (
         <footer className="footer">
-            Todos os direitos reservados.
+            {texts.footerText}
         </footer>
     )
 }
