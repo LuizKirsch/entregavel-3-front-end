@@ -38,33 +38,27 @@ Este é um projeto acadêmico que implementa um sistema Kanban completo para ger
 
 ### Instalação
 
-1. **Clone o repositório**
-   ```bash
-   git clone <url-do-repositorio>
-   cd entregavel-3-front-end
-   ```
-
-2. **Instale as dependências**
+1. **Instale as dependências**
    ```bash
    npm install
    # ou
    yarn install
    ```
 
-3. **Configure as variáveis de ambiente** (opcional)
+2. **Configure as variáveis de ambiente** (opcional)
    ```bash
    # Crie um arquivo .env na raiz do projeto
    VITE_API_BASE=https://pacaro-tarefas.netlify.app/api/kirsch
    ```
 
-4. **Execute o projeto**
+3. **Execute o projeto**
    ```bash
    npm run dev
    # ou
    yarn dev
    ```
 
-5. **Acesse no navegador**
+4. **Acesse no navegador**
    ```
    http://localhost:5173
    ```
