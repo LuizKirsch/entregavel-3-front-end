@@ -69,14 +69,6 @@ Este é um projeto acadêmico que implementa um sistema Kanban completo para ger
    http://localhost:5173
    ```
 
-### Build para Produção
-
-```bash
-npm run build
-# ou
-yarn build
-```
-
 ## 🛠️ Tecnologias Utilizadas
 
 - **React 18** - Biblioteca para interfaces de usuário
